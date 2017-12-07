@@ -1,0 +1,53 @@
+Learning Topics
+
+State
+=======
+State is a plain JavaScript object used to react to user events.
+Each class based components has its own state object.
+To set state up you use this.state in the constructor.
+To update state within the component use this.setState.
+Functional components do NOT have state.
+
+Props
+=======
+A way to pass data from a parent component to a child.
+You do this by doing <VideoList videos={this.state.videos} />.
+In a functional component you must pass though props as a paramater.
+
+Map
+=======
+Map will return a new array where each index is the return value of the function.
+You use map instead of for loops they are much better to loop.
+Each child must have a key prop thats identifiable add this as a prop.
+
+Loading Data From Parent Fast
+========
+When accessing API data from a parent component it takes time to add to props.
+React likes to render the component immediatly.
+Therefore add an if rule within the component to check if the prop has been setup.
+if(!video) {return <div>Loading...</div>;}
+
+Redux
+========
+Contains the state of the application, what the Data is.
+Think about the state before creating the application.
+
+Reducers
+=========
+A reducer is a function that returns a piece of application state.
+
+Container
+=========
+A container is a React component that has a direct connection with state managed by Redux.
+The library 'React-Redux' is the bridge between React(Views) and the Redux(State).
+The most parent component of the data should be a container component.
+To create a component first add the connect feature.
+Then add mapStateToProps function, whatever is returned from this will show up as props inside of the component.
+Connect takes a function and a component and produces a container. Now aware of the state in Redux.
+If state ever changes the container will be re-rendered.
+
+Actions
+=========
+Events that a user does or page loads or data reccieved they can optionally call an action creator.
+And action creator returns an object that is then sent to all of the reducers in the application.
+Reducers can return a different piece of state depending on what the action is.
