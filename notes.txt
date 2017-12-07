@@ -51,3 +51,8 @@ Actions
 Events that a user does or page loads or data reccieved they can optionally call an action creator.
 And action creator returns an object that is then sent to all of the reducers in the application.
 Reducers can return a different piece of state depending on what the action is.
+
+Map Dispatch To Props
+=========
+Anything returned will end up as props within the container.
+You can then call this.props.whatever and that will call the action creator
